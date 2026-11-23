@@ -71,6 +71,7 @@ header {
 main {
 	display: flex;
 	padding: 0 1em 1em;
+	flex-direction: column-reverse;
 	& blockquote {
 		font-style: italic;
 		padding-left: 1em;
@@ -84,7 +85,7 @@ main {
 
 /* the styles for the section */
 section {
-	flex-basis: 75%;
+	border-bottom: 2px solid var(--accent-color);
 	padding-left: .5em;
 	& img {
 		width: clamp(100px, 50%, 250px);
@@ -95,7 +96,6 @@ section {
 
 /* the styles for the aside */
 aside {
-	flex-basis: 25%;
 	padding-right: .5em;
 }
 
@@ -184,3 +184,16 @@ footer {
 
 .menu > li:first-child a { margin-left: 0; }
 .menu > li:last-child a { margin-right: 0; }
+
+@media screen and (min-width: 750px) {
+	main {
+		flex-direction: row;
+	}
+	section {
+		flex-basis: 75%;
+		border-bottom: none;
+	}
+	aside {
+		flex-basis: 25%;
+	}
+}
